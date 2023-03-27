@@ -1,5 +1,8 @@
 import numpy as np
+from numba import njit
 
+
+@njit
 def least(arr):
     m = arr[0]
     for i in range(300):
@@ -8,6 +11,7 @@ def least(arr):
     return m
 
 
+@njit
 def greatest(arr):
     m = 0
     for i in range(300):
@@ -16,6 +20,7 @@ def greatest(arr):
     return m
 
 
+@njit
 def division(k, a, dim):
     j, prev = 0, 0
     p = k / dim
@@ -31,6 +36,7 @@ def division(k, a, dim):
     return a
 
 
+@njit
 def h_from_image(image):
     img, (row, col) = image, image.shape
 
